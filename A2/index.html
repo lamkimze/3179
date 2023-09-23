@@ -41,13 +41,13 @@
       "encoding": {"tooltip": {"field": "missing"}}
     },
     {
-      "data": {"url": "../data/final_economic_datasets.csv"},
+      "data": {"url": "https://raw.githubusercontent.com/lamkimze/3179/main/A2/data/final_economic_datasets.csv"},
       "transform": [
         {
           "lookup": "Country",
           "from": {
             "data": {
-              "url": "../js/ne_110m_admin_0_countries.topojson",
+              "url": "https://raw.githubusercontent.com/lamkimze/3179/main/A2/js/ne_110m_admin_0_countries.topojson",
             "format":{
               "type": "topojson",
               "feature": "ne_110m_admin_0_countries"
@@ -91,7 +91,7 @@
     },
     {
       "data": {
-        "url": "../js/ne_110m_admin_0_countries.topojson",
+        "url": "https://raw.githubusercontent.com/lamkimze/3179/main/A2/js/ne_110m_admin_0_countries.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
       },
       "mark": {"type": "geoshape", "fill": null, "stroke": "white"}
