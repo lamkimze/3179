@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "GDP per Capita (2021)",
+    "width": 800,
+    "height": 400,
+    "projection": {"type": "equalEarth"},
+    "data":{
+        "url": "../js/ne_110m_admin_0_countries.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+    },
+    "transform": [
+        {
+            "lookup": "properties.NAME",
+            "from": {
+                "data" :{
+                    "url": "../data/final_economic_datasets.csv"
+                },
+                "key": "Country",
+                "fields": ["GDP per Capita"]
+            }
+        }
+    ],
+    "mark": {"type": "geoshape"},
+    "encoding": {
+        "color":{
+            "field": "GDP per Capita",
+            "type": "quantitative",
+            "scale": {"type": "log"}
+        },
+        "tooltip":[
+            {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+            {"field": "GDP per Capita", "type": "quantitative"}
+        ]
+    }
+}
